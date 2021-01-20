@@ -14,11 +14,28 @@
         doom-themes-enable-italic t))
 
 (custom-set-faces!
+  '(default :background "undefinded-bg")
+  '(highlight :background "undefinded-bg" :underline t)
+  '(show-paren-match :background "undefinded-bg" :weight bold :underline t)
   '(font-lock-comment-face :slant italic)
-  '(font-lock-keyword-face :slant italic))
+  '(font-lock-keyword-face :slant italic)
+  '(magit-diff-added :background "undefinded-bg")
+  '(magit-diff-added-highlight :background "undefinded-bg")
+  '(magit-diff-base :background "undefinded-bg")
+  '(magit-diff-base-highlight :background "undefinded-bg")
+  '(magit-diff-context :background "undefinded-bg")
+  '(magit-diff-context-highlight :background "undefinded-bg")
+  '(magit-diff-removed :background "undefinded-bg")
+  '(magit-diff-removed-highlight :background "undefinded-bg")
+  '(magit-diff-hunk-heading :background "undefinded-bg")
+  '(magit-diff-hunk-heading-highlight :background "undefinded-bg")
+  '(ivy-current-match :background "undefinded-bg" :weight bold :underline t)
+  '(ivy-minibuffer-match-face-1 :background "undefinded-bg" :weight bold :underline t)
+  '(ivy-minibuffer-match-face-2 :background "undefinded-bg" :weight bold :underline t)
+  '(mode-line :background "undefinded-bg"))
 
 (after! org
-  (setq org-directory "~/org/"
+  (setq org-directory "~/cloud/"
         org-hide-emphasis-markers t))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
@@ -53,4 +70,5 @@
 
 (setq next-line-add-newlines t)
 
+(map! :n "U" #'undo-tree-visualize)
 (map! :n "<escape>" #'save-buffer)
