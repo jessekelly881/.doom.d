@@ -38,16 +38,24 @@
   (setq org-directory "~/cloud/"
         org-hide-emphasis-markers t))
 
-;; There are two ways to load a theme. Both assume the theme is installed and
-;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-spacegrey)
+(after! magit
+  (setq git-commit-major-mode 'org-mode
+        git-commit-summary-max-length 50)
+  (add-hook! after-save-hook #'magit-after-save-refresh-status)
+  (add-hook! git-commit-mode #'evil-normal-state))
 
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
 
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
+;; Themes
+(setq doom-theme 'doom-gruvbox-light)
+(after! heaven-and-hell
+  (setq heaven-and-hell-themes '((light . doom-gruvbox-light) (dark . doom-spacegrey))
+        heaven-and-hell-load-theme-no-confirm t)
+  (map!
+   :g "<f6>" 'heaven-and-hell-toggle-theme
+   :leader "<f6>" 'heaven-and-hell-load-default-theme))
+
+(add-hook 'after-init-hook 'heaven-and-hell-init-hook)
+
 (setq display-line-numbers-type `relative)
 
 
