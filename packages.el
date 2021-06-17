@@ -54,3 +54,6 @@
 (package! modus-operandi-theme)
 (package! twilight-bright-theme)
 (package! jest)
+
+(package! org-pretty-table
+  :recipe (:host github :repo "Fuco1/org-pretty-table"))
