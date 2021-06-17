@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: Morphic
+# key: morphic
+# --
+
+import { summonFor } from '@morphic-ts/batteries/lib/summoner-ESBST';
+import * as t from "io-ts";
+
+const { summon } = summonFor<{}>({})
+
+export const $1M = summon(F => $2);
+
+export type $1 = t.TypeOf<typeof $1M.type>;
