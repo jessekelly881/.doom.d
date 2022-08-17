@@ -19,6 +19,8 @@ Personal information. Some functionality uses this to identify you, e.g. GPG con
   '(show-paren-match :background "undefinded-bg" :weight bold :underline t)
   '(font-lock-comment-face :slant italic)
   '(font-lock-keyword-face :slant italic)
+  '(org-table ((t (:height 0.8 :background "#efeef0" :foreground "#8b888b" :font "Dejavu Sans Mono"))))
+  '(org-formula ((t (:foreground "#25196b" :height 0.8 :background "#efeef0" :font "Dejavu Sans Mono"))))
   '(magit-diff-added :background "undefinded-bg")
   '(magit-diff-added-highlight :background "undefinded-bg")
   '(magit-diff-base :background "undefinded-bg")
@@ -34,6 +36,7 @@ Personal information. Some functionality uses this to identify you, e.g. GPG con
   '(ivy-minibuffer-match-face-2 :background "undefinded-bg" :weight bold :underline t)
   '(mode-line :background "undefinded-bg"))
 
+
 (after! org
   (setq org-directory "~/cloud/"
         org-hide-emphasis-markers t))
@@ -48,6 +51,7 @@ Personal information. Some functionality uses this to identify you, e.g. GPG con
 ;; Themes
 (setq display-line-numbers-type `relative)
 (setq next-line-add-newlines t)
+
 
 (map! :n "U" #'undo-tree-visualize)
 (map! :n "<escape>" #'save-buffer)
@@ -67,7 +71,7 @@ Personal information. Some functionality uses this to identify you, e.g. GPG con
 
 (add-hook 'after-init-hook 'heaven-and-hell-init-hook)
 
-#+end_src
+      #+end_src
 
 Org tables aren’t the prettiest thing to look at. This package redraws them in the buffer with box-drawing characters.
 #+begin_src emacs-lisp
@@ -75,4 +79,66 @@ Org tables aren’t the prettiest thing to look at. This package redraws them in
   :commands (org-pretty-table-mode global-org-pretty-table-mode)  )
 
 (global-org-pretty-table-mode)
+#+end_src
+
+#+begin_src emacs-lisp
+(setq org-export-creator-string
+      (format "Emacs %s (Org mode %s %s)" emacs-version (org-release) (org-git-version)))
+#+end_src
+
+#+begin_src emacs-lisp
+(after! evil
+  (setq evil-move-cursor-back nil ; Don't move the block cursor when toggling
+        evil-kill-on-visual-paste nil)) ; Don't put overwritten text in the kill ring
+#+end_src
+
+
+Window title
+#+begin_src emacs-lisp
+(setq frame-title-format '("%b@" (:eval (or (file-remote-p default-directory 'host) system-name))))
+
+#+end_src
+
+
+Better defaults
+
+#+begin_src emacs-lisp
+(setq-default
+ delete-by-moving-to-trash t ; Delete files to trash
+ window-combination-resize t ; take new window space from all other windows (not just current)
+ x-stretch-cursor t) ; Stretch cursor to the glyph width
+
+(setq undo-limit 80000000 ; Raise undo-limit to 80Mb
+      confirm-kill-emacs nil
+      evil-want-fine-undo t ; By default while in insert all changes are one big blob. Be more granular
+      auto-save-default t ; Nobody likes to loose work, I certainly don't truncate-string-ellipsis "..." ; Unicode ellispis are nicer than "...", and also save /precious/ space
+      password-cache-expiry nil ; I can trust my computers ... can't I?
+      scroll-margin 2) ; It's nice to maintain a little margin
+
+(display-time-mode 1) ; Enable time in the mode-line
+(unless (string-match-p "^Power N/A" (battery)) ; On laptops... (display-battery-mode 1)) ; it's nice to know how much power you have
+  (global-subword-mode 1)) ; Iterate through CamelCase words
+#+end_src
+
+Highlight important stuff.
+#+begin_src emacs-lisp
+(global-highlight-thing-mode)
+#+end_src
+
+#+begin_src emacs-lisp
+(setq +zen-text-scale 0.8)
+#+end_src
+
+#+begin_src emacs-lisp
+(custom-set-variables
+ '(zoom-size '(0.618 . 0.618))
+ '(zoom-mode t))
+#+end_src
+
+Better org export settings.
+#+begin_src emacs-lisp
+(setq org-html-style-plain org-html-style-default
+      org-html-htmlize-output-type 'css
+      org-html-doctype "html5"
+      org-html-html5-fancy t)
 #+end_src
