@@ -37,9 +37,9 @@ Personal information. Some functionality uses this to identify you, e.g. GPG con
   '(mode-line :background "undefinded-bg"))
 
 
-(after! org
-  (setq org-directory "~/cloud/"
-        org-hide-emphasis-markers t))
+;; (after! org
+;;   (setq org-directory "~/cloud/"
+;;         org-hide-emphasis-markers t))
 
 (after! magit
   (setq git-commit-major-mode 'org-mode
@@ -61,17 +61,8 @@ Personal information. Some functionality uses this to identify you, e.g. GPG con
 
 (add-to-list 'auto-mode-alist '("\\.liquid\\'" . web-mode))
 
-(setq doom-theme 'modus-operandi)
-(after! heaven-and-hell
-  (setq heaven-and-hell-themes '((light . modus-operandi) (dark . doom-spacegrey))
-        heaven-and-hell-load-theme-no-confirm t)
-  (map!
-   :g "<f6>" 'heaven-and-hell-toggle-theme
-   :leader "<f6>" 'heaven-and-hell-load-default-theme))
-
-(add-hook 'after-init-hook 'heaven-and-hell-init-hook)
-
-      #+end_src
+(setq doom-theme 'doom-one-light)
+#+end_src
 
 Org tables aren’t the prettiest thing to look at. This package redraws them in the buffer with box-drawing characters.
 #+begin_src emacs-lisp
@@ -133,12 +124,4 @@ Highlight important stuff.
 (custom-set-variables
  '(zoom-size '(0.618 . 0.618))
  '(zoom-mode t))
-#+end_src
-
-Better org export settings.
-#+begin_src emacs-lisp
-(setq org-html-style-plain org-html-style-default
-      org-html-htmlize-output-type 'css
-      org-html-doctype "html5"
-      org-html-html5-fancy t)
 #+end_src

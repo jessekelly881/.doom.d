@@ -51,7 +51,6 @@
 
 (package! heaven-and-hell)
 (package! spacemacs-theme)
-(package! modus-operandi-theme)
 (package! twilight-bright-theme)
 (package! jest)
 (package! highlight-thing)
