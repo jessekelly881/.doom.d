@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: wrapped snippet
+# key:
+# --
+
+import * as "$1" from "$2";

@@ -56,5 +56,4 @@
 (package! highlight-thing)
 (package! zoom)
 (package! import-js)
-(package! jsdoc :recipe (:host github :repo "isamert/jsdoc.el"))
 (package! org-pretty-table :recipe (:host github :repo "Fuco1/org-pretty-table"))

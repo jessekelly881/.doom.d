@@ -125,3 +125,9 @@ Highlight important stuff.
  '(zoom-size '(0.618 . 0.618))
  '(zoom-mode t))
 #+end_src
+
+#+begin_src emacs-lisp
+(setq vertico-posframe-parameters
+      '((left-fringe . 8)
+        (right-fringe . 8)))
+#+end_src
