@@ -16,7 +16,7 @@
 
 (doom!
  :completion
- (vertico +childframe +icons)
+ (ivy +childframe +icons +prescient +fuzzy)
 
  :ui
  ;;deft              ; notational velocity for Emacs
