@@ -13,28 +13,7 @@ Personal information. Some functionality uses this to identify you, e.g. GPG con
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
 
-(custom-set-faces!
-  '(default :background "undefinded-bg")
-  '(highlight :background "undefinded-bg" :underline t)
-  '(show-paren-match :background "undefinded-bg" :weight bold :underline t)
-  '(font-lock-comment-face :slant italic)
-  '(font-lock-keyword-face :slant italic)
-  '(org-table ((t (:height 0.8 :background "#efeef0" :foreground "#8b888b" :font "Dejavu Sans Mono"))))
-  '(org-formula ((t (:foreground "#25196b" :height 0.8 :background "#efeef0" :font "Dejavu Sans Mono"))))
-  '(magit-diff-added :background "undefinded-bg")
-  '(magit-diff-added-highlight :background "undefinded-bg")
-  '(magit-diff-base :background "undefinded-bg")
-  '(magit-diff-base-highlight :background "undefinded-bg")
-  '(magit-diff-context :background "undefinded-bg")
-  '(magit-diff-context-highlight :background "undefinded-bg")
-  '(magit-diff-removed :background "undefinded-bg")
-  '(magit-diff-removed-highlight :background "undefinded-bg")
-  '(magit-diff-hunk-heading :background "undefinded-bg")
-  '(magit-diff-hunk-heading-highlight :background "undefinded-bg")
-  '(ivy-current-match :background "undefinded-bg" :weight bold :underline t)
-  '(ivy-minibuffer-match-face-1 :background "undefinded-bg" :weight bold :underline t)
-  '(ivy-minibuffer-match-face-2 :background "undefinded-bg" :weight bold :underline t)
-  '(mode-line :background "undefinded-bg"))
+'(mode-line :background "undefinded-bg")
 
 
 ;; (after! org
