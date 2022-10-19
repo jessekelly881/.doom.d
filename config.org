@@ -35,7 +35,7 @@ Personal information. Some functionality uses this to identify you, e.g. GPG con
 (after! heaven-and-hell
   (setq heaven-and-hell-themes
         '((light . doom-earl-grey)
-          (dark . doom-rouge)))
+          (dark . doom-sourcerer)))
   ;; Optionall, load themes without asking for confirmation.
   (setq heaven-and-hell-load-theme-no-confirm t)
   (map!
