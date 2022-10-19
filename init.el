@@ -17,7 +17,7 @@
 (doom!
  :completion
  (vertico +childframe +icons)
- (company +childframe +tng)
+ (company +childframe)
 
  :ui
  ;;deft              ; notational velocity for Emacs
