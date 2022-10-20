@@ -133,3 +133,11 @@ Company
   (define-key company-active-map (kbd "<return>") #'company-complete-selection)
   (define-key company-active-map (kbd "RET") #'company-complete-selection))
 #+end_src
+
+Focus Mode
+#+begin_src emacs-lisp
+(add-hook 'text-mode-hook (lambda () (focus-mode)))
+(add-hook 'prog-mode-hook (lambda () (focus-mode)))
+(after! focus
+  (add-to-list 'focus-mode-to-thing '(lsp-mode . lsp-folding-range)))
+#+end_src

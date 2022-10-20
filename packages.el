@@ -55,5 +55,6 @@
 (package! jest)
 (package! highlight-thing)
 (package! zoom)
+(package! focus)
 (package! import-js)
 (package! org-pretty-table :recipe (:host github :repo "Fuco1/org-pretty-table"))
