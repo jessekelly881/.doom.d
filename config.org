@@ -137,7 +137,7 @@ Company
 Focus Mode
 #+begin_src emacs-lisp
 (add-hook 'text-mode-hook (lambda () (focus-mode)))
-(add-hook 'prog-mode-hook (lambda () (focus-mode)))
+;; (add-hook 'prog-mode-hook (lambda () (focus-mode))) ;; Has issues
 (after! focus
   (add-to-list 'focus-mode-to-thing '(lsp-mode . lsp-folding-range)))
 #+end_src
