@@ -126,7 +126,6 @@ Highlight important stuff.
 
 Company
 #+begin_src emacs-lisp
-(setq company-selection-default 0)
 (with-eval-after-load 'company
   (define-key company-active-map [tab] #'company-complete-selection)
   (define-key company-active-map (kbd "TAB") #'company-complete-selection)
@@ -145,4 +144,10 @@ Focus Mode
 Dash
 #+begin_src emacs-lisp
 (map! :n "g r" #'dash-at-point)
+#+end_src
+
+Suppress warnings
+#+begin_src emacs-lisp
+(after! warnings
+  (add-to-list 'warning-suppress-types '(yasnippet backquote-change)))
 #+end_src

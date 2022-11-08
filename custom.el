@@ -20,6 +20,7 @@
      ((yasnippet backquote-change))
      ((yasnippet backquote-change))
      ((yasnippet backquote-change))
+     ((yasnippet backquote-change))
      (defvaralias)))
  '(zoom-mode t t)
  '(zoom-size '(0.618 . 0.618)))

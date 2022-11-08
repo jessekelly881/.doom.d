@@ -61,3 +61,4 @@
 (package! prettier-js)
 (package! dash-at-point)
 (package! doom-snippets :ignore t)
+(package! warnings)

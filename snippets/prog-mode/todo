@@ -3,4 +3,4 @@
 # key: /todo
 # --
 
-`(insert comment-start)` TODO: $1 `(insert comment-end)`
+`(insert comment-start)` ${1:$$(yas-auto-next (yas-choose-value '("TODO" "FIXME" "NOTE" "BUG" "DEPRECATED")))}: $0 `(insert comment-end)`
