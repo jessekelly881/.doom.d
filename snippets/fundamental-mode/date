@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: date
+# key: /date
+# --
+
+
+${1:$$(yas-choose-value
+  (format-time-string "%b. %d, %Y")
+  (format-time-string "%A")
+  (format-time-string "%F")
+  (format-time-string "%x")
+  (format-time-string "%FT%T%z")
+  (format-time-string "%Z")
+)} $0

@@ -127,8 +127,7 @@ Highlight important stuff.
 Company
 #+begin_src emacs-lisp
 (with-eval-after-load 'company
-  (define-key company-active-map [tab] #'company-complete-selection)
-  (define-key company-active-map (kbd "TAB") #'company-complete-selection)
+  (define-key company-active-map [tab] nil)
   (define-key company-active-map (kbd "<return>") #'company-complete-selection)
   (define-key company-active-map (kbd "RET") #'company-complete-selection))
 #+end_src
