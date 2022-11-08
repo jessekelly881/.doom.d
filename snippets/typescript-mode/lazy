@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: lazy value
+# key: lazy
+# --
+
+const $1 = () => $2;

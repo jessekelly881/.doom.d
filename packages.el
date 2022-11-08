@@ -58,3 +58,6 @@
 (package! focus)
 (package! import-js)
 (package! org-pretty-table :recipe (:host github :repo "Fuco1/org-pretty-table"))
+(package! prettier-js)
+(package! dash-at-point)
+(package! doom-snippets :ignore t)

@@ -141,3 +141,8 @@ Focus Mode
 (after! focus
   (add-to-list 'focus-mode-to-thing '(lsp-mode . lsp-folding-range)))
 #+end_src
+
+Dash
+#+begin_src emacs-lisp
+(map! :n "g r" #'dash-at-point)
+#+end_src
